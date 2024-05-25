@@ -303,5 +303,10 @@ var observer = new MutationObserver(function(mutationsList, observer) {
     }
   }
 });
+
+const script = document.createElement('script');
+script.src = 'https://your-github-username.github.io/your-repo-name/your-script.js?v=' + new Date().getTime();
+document.head.appendChild(script);
+
 var config = { childList: true, subtree: true, characterData: true };
 observer.observe(targetNode, config);

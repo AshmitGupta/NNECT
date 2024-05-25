@@ -304,9 +304,5 @@ var observer = new MutationObserver(function(mutationsList, observer) {
   }
 });
 
-const script = document.createElement('script');
-script.src = 'https://ashmitgupta.github.io/NNECT/main.js?v=' + new Date().getTime();
-document.head.appendChild(script);
-
 var config = { childList: true, subtree: true, characterData: true };
 observer.observe(targetNode, config);

@@ -76,7 +76,6 @@ subHeadingObserver.observe(subHeading, {
     const formattedSubCategory = formatTextForComparison(subCategoryText);
     const perPersonDiv = document.querySelectorAll('.div-block-66');
     const subHeading = document.getElementById('sub-heading');
-    console.log(subHeading);
     if (subCategoryText) {
       let displayText = toTitleCase(subCategoryText);
       const suffixes = ['Platter', 'Tray', 'Trays', 'Platters', 'Cookies', 'Waffles'];
@@ -99,8 +98,8 @@ subHeadingObserver.observe(subHeading, {
     const dishes = document.querySelectorAll('#main-list .w-dyn-item');
     dishes.forEach(function(dish) {
       const dishSubCategory = formatTextForComparison(dish.querySelector('.sub-category').textContent.trim());
-      console.log(dishSubCategory);
       if (formattedSubCategory === dishSubCategory) {
+        console.log("HERE I AM);
         dish.style.display = 'block';
       } else {
         dish.style.display = 'none';

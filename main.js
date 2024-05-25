@@ -178,17 +178,6 @@ subHeadingObserver.observe(subHeading, {
     });
   }
 
-  if (popupDiv) {
-    popupDiv.style.display = 'none';
-
-    checkoutButtons.forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.preventDefault();
-        popupDiv.style.display = 'block';
-      });
-    });
-  }
-
   var dateTimeText = document.getElementById('date-time-text');
   var dateTimePickerButton = document.getElementById('date-time-picker');
 
@@ -281,17 +270,7 @@ subHeadingObserver.observe(subHeading, {
     });
   });
 });
-document.addEventListener("visibilitychange", function() {
-  if (document.visibilityState === 'visible') {
-    if (localStorage.getItem('hidePopup') === 'true') {
-      var popupDiv = document.getElementById('popup-div');
-      if (popupDiv) {
-        popupDiv.style.display = 'none';
-      }
-      localStorage.removeItem('hidePopup');
-    }
-  }
-});
+
 var targetNode = document.getElementById('price-sub');
 // Select all elements that match the given ID. Since IDs should be unique but you have duplicates, this approach targets them as a workaround.
 var buttons = document.querySelectorAll('[id="checkout-btn-1"]');

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateSubLinksStyle() {
   const subHeadingText = document.getElementById('sub-heading').textContent.trim();
-  const subLinks = document.querySelectorAll('#sub-list .sub-links-text');
+  const subLinks = document.querySelectorAll('#sub-list .sub-links-text-2');
   let textForComparison = subHeadingText.split(' (')[0]; // Extract text before any bracket ' ('
 
   subLinks.forEach((link) => {

@@ -3,10 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var priceElements = document.querySelectorAll('.prices-all');
 
         priceElements.forEach(function(element) {
-            console.log("Original text:", element.textContent);
             var updatedText = element.textContent.replace(/\$\s*/g, '$');
             element.textContent = updatedText;
-            console.log("Updated text:", element.textContent);
         });
     }, 750);
   var cartItems = document.querySelectorAll('[id="cart-item"]');
@@ -98,9 +96,7 @@ subHeadingObserver.observe(subHeading, {
   const dishes = document.querySelectorAll('#main-list .w-dyn-item');
   dishes.forEach(function(dish) {
     const dishSubCategory = formatTextForComparison(dish.querySelector('.sub-category').textContent.trim());
-    console.log(`Formatted Sub Category: ${formattedSubCategory}, Dish Sub Category: ${dishSubCategory}`);
     if (formattedSubCategory === dishSubCategory) {
-      console.log("HERE I AM");
       dish.style.display = 'block';
     } else {
       dish.style.display = 'none';
@@ -130,8 +126,6 @@ subHeadingObserver.observe(subHeading, {
     link.addEventListener('click', function(event) {
       event.preventDefault();
       var linkText = this.textContent.trim();
-      console.log("HERE")
-      console.log(linkText);
       filterDishes(linkText);
 
       closeDropdown();
@@ -277,7 +271,7 @@ subHeadingObserver.observe(subHeading, {
 
   quantityInputs.forEach(function(input) {
     input.value = '0';
-    if (input.hasAttribute('min')) {console.log("HI")
+    if (input.hasAttribute('min')) {
      input.setAttribute('min', '0');
     }
     input.addEventListener('keypress', function(event) {

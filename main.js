@@ -99,7 +99,7 @@ subHeadingObserver.observe(subHeading, {
     dishes.forEach(function(dish) {
       const dishSubCategory = formatTextForComparison(dish.querySelector('.sub-category').textContent.trim());
       if (formattedSubCategory === dishSubCategory) {
-        console.log("HERE I AM);
+        console.log("HERE I AM");
         dish.style.display = 'block';
       } else {
         dish.style.display = 'none';

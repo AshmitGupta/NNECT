@@ -95,16 +95,17 @@ subHeadingObserver.observe(subHeading, {
     }
     sortDishes();
 
-    const dishes = document.querySelectorAll('#main-list .w-dyn-item');
-    dishes.forEach(function(dish) {
-      const dishSubCategory = formatTextForComparison(dish.querySelector('.sub-category').textContent.trim());
-      if (formattedSubCategory === dishSubCategory) {
-        console.log("HERE I AM");
-        dish.style.display = 'block';
-      } else {
-        dish.style.display = 'none';
-      }
-    });
+  const dishes = document.querySelectorAll('#main-list .w-dyn-item');
+  dishes.forEach(function(dish) {
+    const dishSubCategory = formatTextForComparison(dish.querySelector('.sub-category').textContent.trim());
+    console.log(`Formatted Sub Category: ${formattedSubCategory}, Dish Sub Category: ${dishSubCategory}`);
+    if (formattedSubCategory === dishSubCategory) {
+      console.log("HERE I AM");
+      dish.style.display = 'block';
+    } else {
+      dish.style.display = 'none';
+    }
+  });
 
     updateSubLinksStyle();
   }
